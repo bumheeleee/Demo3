@@ -9,6 +9,8 @@ public class ChatTest : MonoBehaviour, IChatClientListener {
 	private string currentChannelName;
 
 	public InputField inputField;
+	public InputField NickNameInput;
+
 	public Text outputText;
 
 	// Use this for initialization
@@ -16,7 +18,7 @@ public class ChatTest : MonoBehaviour, IChatClientListener {
 		
 		Application.runInBackground = true;
 
-		userName = System.Environment.UserName;
+		userName = NickNameInput.text;
 		currentChannelName = "Channel 001";
 
 		chatClient = new ChatClient(this);
